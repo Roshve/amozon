@@ -7,7 +7,6 @@ class Menu extends React.Component{
 
     constructor(props){
         super(props);
-
         this.state = {newItemPanelAdd: false}
 
         this.add = this.add.bind(this);
@@ -32,7 +31,7 @@ class Menu extends React.Component{
                     </div>
     
                     <div className="search">
-                        <Search/>
+                        <Search onsearch={this.props.onsearch}/>
                     </div>
     
                     <div className="actions">
@@ -41,7 +40,7 @@ class Menu extends React.Component{
                 </div>
                 {
                     (this.state.newItemPanelAdd)?
-                        <PanelAdd  oncancel={this.onCancel}/>
+                        <PanelAdd  oncancel={this.onCancel} onadd= {this.props.onadd}/>
                     :
                     ''
                 }
